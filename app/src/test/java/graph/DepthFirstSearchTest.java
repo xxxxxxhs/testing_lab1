@@ -2,7 +2,6 @@ package graph;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,9 +21,7 @@ public class DepthFirstSearchTest {
         graph.addEdge(2, 3);
 
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
-        List<String> actualTrace = new ArrayList<>();
-
-        dfs.dfs(1, actualTrace);
+        List<String> actualTrace = dfs.dfs(1);
 
         List<String> expectedTrace = List.of(
                 "T1:start:1",
@@ -53,9 +50,7 @@ public class DepthFirstSearchTest {
         graph.addEdge(2, 4);
 
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
-        List<String> actualTrace = new ArrayList<>();
-
-        dfs.dfs(1, actualTrace);
+        List<String> actualTrace = dfs.dfs(1);
 
         List<String> expectedTrace = List.of(
                 "T1:start:1",
@@ -89,9 +84,7 @@ public class DepthFirstSearchTest {
         graph.addEdge(3, 1);
 
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
-        List<String> actualTrace = new ArrayList<>();
-
-        dfs.dfs(1, actualTrace);
+        List<String> actualTrace = dfs.dfs(1);
 
         List<String> expectedTrace = List.of(
                 "T1:start:1",
@@ -122,9 +115,7 @@ public class DepthFirstSearchTest {
         graph.addVertex(1);
 
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
-        List<String> actualTrace = new ArrayList<>();
-
-        dfs.dfs(1, actualTrace);
+        List<String> actualTrace = dfs.dfs(1);
 
         List<String> expectedTrace = List.of(
                 "T1:start:1",
@@ -140,9 +131,7 @@ public class DepthFirstSearchTest {
         Graph graph = new Graph();
 
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
-        List<String> actualTrace = new ArrayList<>();
-
-        dfs.dfs(1, actualTrace);
+        List<String> actualTrace = dfs.dfs(1);
 
         List<String> expectedTrace = List.of(
                 "T1:start:1",
@@ -160,9 +149,7 @@ public class DepthFirstSearchTest {
         graph.addEdge(3, 4);
 
         DepthFirstSearch dfs = new DepthFirstSearch(graph);
-        List<String> actualTrace = new ArrayList<>();
-
-        dfs.dfs(3, actualTrace);
+        List<String> actualTrace = dfs.dfs(3);
 
         List<String> expectedTrace = List.of(
                 "T1:start:3",
