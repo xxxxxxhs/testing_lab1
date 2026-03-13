@@ -1,8 +1,6 @@
 package graph;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class DepthFirstSearch {
@@ -15,41 +13,40 @@ public class DepthFirstSearch {
         this.graph = graph;
     }
 
-    public List<String> dfs(int start) {
+    public void dfs(int start) {
         Set<Integer> visited = new HashSet<>();
-        List<String> trace = new ArrayList<>();
-        trace.add("T1:start:" + start);
-        dfsRecursive(start, visited, trace);
-        return trace;
+        graph.onDfsStart(start);
+        dfsRecursive(start, visited);
     }
 
-    private void dfsRecursive(int vertex, Set<Integer> visited, List<String> trace) {
-        visitVertex(vertex, visited, trace);
+    private void dfsRecursive(int vertex, Set<Integer> visited) {
+        visitVertex(vertex, visited);
         for (int neighbor : graph.getNeighbors(vertex)) {
-            processNeighbor(vertex, neighbor, visited, trace);
+            processNeighbor(vertex, neighbor, visited);
         }
-        finishVertex(vertex, trace);
+        finishVertex(vertex);
     }
 
-    private void visitVertex(int vertex, Set<Integer> visited, List<String> trace) {
-        trace.add("T2:visit:" + vertex);
+    private void visitVertex(int vertex, Set<Integer> visited) {
+        graph.onDfsVisit(vertex);
         visited.add(vertex);
     }
 
-    private void processNeighbor(int vertex, int neighbor, Set<Integer> visited, List<String> trace) {
-        trace.add("T3:edge:" + vertex + "->" + neighbor);
+    private void processNeighbor(int vertex, int neighbor, Set<Integer> visited) {
+        graph.onDfsEdge(vertex, neighbor);
         if (!visited.contains(neighbor)) {
-            dfsRecursive(neighbor, visited, trace);
+            dfsRecursive(neighbor, visited);
         } else {
-            handleAlreadyVisitedNeighbor(neighbor, trace);
+            handleAlreadyVisitedNeighbor(neighbor);
         }
     }
 
-    private void handleAlreadyVisitedNeighbor(int neighbor, List<String> trace) {
-        trace.add("T4:alreadyVisited:" + neighbor);
+    private void handleAlreadyVisitedNeighbor(int neighbor) {
+        graph.onDfsAlreadyVisited(neighbor);
     }
 
-    private void finishVertex(int vertex, List<String> trace) {
-        trace.add("T5:return:" + vertex);
+    private void finishVertex(int vertex) {
+        graph.onDfsReturn(vertex);
     }
 }
+

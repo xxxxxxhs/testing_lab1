@@ -39,8 +39,20 @@ public class Graph {
         return neighbors;
     }
 
-    //public List<Integer> getVertices() {
-      //  return new ArrayList<>(adjacency.keySet());
-    //}
+    protected void onDfsStart(int startVertex) {
+    }
+
+    protected void onDfsVisit(int vertex) {
+    }
+
+    protected void onDfsEdge(int from, int to) {
+    }
+
+    protected void onDfsAlreadyVisited(int vertex) {
+    }
+
+    protected void onDfsReturn(int vertex) {
+    }
 }
+
 

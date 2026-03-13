@@ -30,27 +30,39 @@ public class TracingGraph extends Graph {
     }
 
     @Override
-    public void addVertex(int v) {
+    protected void onDfsStart(int startVertex) {
         if (tracingEnabled) {
-            trace.add("GV:addVertex:" + v);
+            trace.add("T1:start:" + startVertex);
         }
-        super.addVertex(v);
     }
 
     @Override
-    public void addEdge(int u, int v) {
+    protected void onDfsVisit(int vertex) {
         if (tracingEnabled) {
-            trace.add("GE:addEdge:" + u + "->" + v);
+            trace.add("T2:visit:" + vertex);
         }
-        super.addEdge(u, v);
     }
 
     @Override
-    public List<Integer> getNeighbors(int v) {
+    protected void onDfsEdge(int from, int to) {
         if (tracingEnabled) {
-            trace.add("GN:getNeighbors:" + v);
+            trace.add("T3:edge:" + from + "->" + to);
         }
-        return super.getNeighbors(v);
+    }
+
+    @Override
+    protected void onDfsAlreadyVisited(int vertex) {
+        if (tracingEnabled) {
+            trace.add("T4:alreadyVisited:" + vertex);
+        }
+    }
+
+    @Override
+    protected void onDfsReturn(int vertex) {
+        if (tracingEnabled) {
+            trace.add("T5:return:" + vertex);
+        }
     }
 }
+
 
