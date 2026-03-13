@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MathSeriesTest {
-
+    // TODO вынести константой епс и группы эквивалентности
     @Test
     public void testSinSeriesAtZero() {
         double x = 0.0;

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 public class DepthFirstSearch {
-
+    // TODO Выводить из dfs сразу return и lambda, добавить шаблон декоратора
     private final Graph graph;
 
     public DepthFirstSearch(Graph graph) {

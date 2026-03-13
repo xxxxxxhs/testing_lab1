@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SceneIntegrationTest {
 
+    // TODO отыграть сценку в тесте вместо метода в классе
+
     @Test
     public void fullEscapeScenario() {
         Scene scene = new Scene();

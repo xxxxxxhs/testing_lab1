@@ -39,8 +39,8 @@ public class Graph {
         return neighbors;
     }
 
-    public List<Integer> getVertices() {
-        return new ArrayList<>(adjacency.keySet());
-    }
+    //public List<Integer> getVertices() {
+      //  return new ArrayList<>(adjacency.keySet());
+    //}
 }
 

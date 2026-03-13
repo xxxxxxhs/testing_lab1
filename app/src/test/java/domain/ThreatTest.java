@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ThreatTest {
 
+    // TODO добавить тест где уходим в минус
+    // TODO сделать тесты более гранулярными - одно действие
+
     @Test
     public void rodentsApproachCharacters() {
         Character arthur = new Character("Arthur");

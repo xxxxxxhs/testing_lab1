@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DoorTest {
 
+    // TODO проверить когда OPEN
+
     @Test
     public void closedDoorCanBeOpened() {
         Door door = new Door(DoorState.CLOSED);

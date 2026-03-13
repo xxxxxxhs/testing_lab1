@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class CharacterStateTest {
 
+    // TODO добавить кейс когда может загипнотизировать
+
     @Test
     public void arthurBecomesLimpAndHypnotized() {
         Character arthur = new Character("Arthur");
